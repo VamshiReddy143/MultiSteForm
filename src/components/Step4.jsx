@@ -9,24 +9,20 @@ const Step4 = ({ nextStep, prevStep, formData, change }) => {
     { name: "Customizable Profile", price: 2, isActive: formData?.addOns?.customizableProfile },
   ];
 
-
   const planPrices = {
     Arcade: 9,
     Advanced: 12,
     Pro: 15,
   };
 
-
   const basePrice = planPrices[formData?.plan] || 0;
   const addOnTotal = addOns
     .filter((addOn) => addOn.isActive)
     .reduce((total, addOn) => total + addOn.price, 0);
 
-
   const total = formData?.isYearly
-    ? (basePrice * 12) + addOnTotal 
-    : basePrice + addOnTotal; 
-
+    ? basePrice * 12 + addOnTotal
+    : basePrice + addOnTotal;
 
   const planPrice = formData?.isYearly
     ? `${basePrice * 12}/yr`
@@ -56,15 +52,20 @@ const Step4 = ({ nextStep, prevStep, formData, change }) => {
         <hr className="my-3 border-gray-400" />
 
         {/* Add-Ons */}
-        {addOns.map(
-          (addOn, index) =>
-            addOn.isActive && (
-              <div key={index} className="flex justify-between items-center p-4 bg-gray-300 rounded-xl mb-2">
-                <p>{addOn.name}</p>
-                <p>{`+$${addOn.price}/mo`}</p>
-              </div>
-            )
-        )}
+        <div
+          className="flex flex-col gap-2 max-h-[90px] overflow-auto" 
+          style={{ minHeight: "90px" }} 
+        >
+          {addOns.map(
+            (addOn, index) =>
+              addOn.isActive && (
+                <div key={index} className="flex justify-between items-center p-4 bg-gray-300 rounded-xl">
+                  <p>{addOn.name}</p>
+                  <p>{`+$${addOn.price}/mo`}</p>
+                </div>
+              )
+          )}
+        </div>
       </div>
 
       {/* Total Section */}
@@ -72,7 +73,9 @@ const Step4 = ({ nextStep, prevStep, formData, change }) => {
         <p className="text-lg font-bold">
           Total {formData?.isYearly ? "(per year)" : "(per month)"}
         </p>
-        <p className="font-bold text-blue-500 text-lg">{formData?.isYearly ? `$${total}/yr` : `$${total}/mo`}</p>
+        <p className="font-bold text-blue-500 text-lg">
+          {formData?.isYearly ? `$${total}/yr` : `$${total}/mo`}
+        </p>
       </div>
 
       {/* Action Buttons */}
