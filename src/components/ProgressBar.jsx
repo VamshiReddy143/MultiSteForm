@@ -5,7 +5,7 @@ function ProgressBar({ step }) {
     <div className="gap-10 p-[3.5em]  relative">
       <img
         className="absolute top-[-30%] right-[-8%] rounded-xl z-0"
-        src="../assets/bg-sidebar-desktop.svg"
+        src="/assets/bg-sidebar-desktop.svg"
         alt="Background"
       />
       <div className="flex flex-col gap-5  items-start z-10 top-[-110px]  relative"> {/* Add relative here */}
