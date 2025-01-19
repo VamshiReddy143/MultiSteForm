@@ -1,11 +1,12 @@
 import React from 'react';
+import bgSidebarDesktop from '/assets/bg-sidebar-desktop.svg';
 
 function ProgressBar({ step }) {
   return (
     <div className="gap-10 p-[3.5em]  relative">
       <img
         className="absolute top-[-30%] right-[-8%] rounded-xl z-0"
-        src="/assets/bg-sidebar-desktop.svg"
+        src={bgSidebarDesktop}
         alt="Background"
       />
       <div className="flex flex-col gap-5  items-start z-10 top-[-110px]  relative"> {/* Add relative here */}
