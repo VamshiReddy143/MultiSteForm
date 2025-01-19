@@ -15,23 +15,23 @@ function ProgressBar({ step }) {
             className={`progress-step ${step === num ? 'active' : ''} flex gap-4 z-10`}
           >
             <p
-              className={`text-white h-[30px] w-[30px] text-center flex flex-col justify-center z-10 border rounded-full ${
-                step === num ? 'bg-sky-100  text-blue-600' : ''
-              }`}
+              className={`h-[30px] w-[30px] text-center flex flex-col justify-center z-10 border rounded-full ${step === num ? 'bg-sky-100 text-blue-600' : 'text-white'
+                }`}
             >
               {num}
             </p>
 
-            <div className="text-white z-10 items-start flex flex-col relative "> 
+
+            <div className="text-white z-10 items-start flex flex-col relative ">
               <p className="text-[10px] text-gray-300">{`STEP ${num}`}</p>
               <p className="text-[12px] font-bold ">
                 {num === 1
                   ? 'YOUR INFO'
                   : num === 2
-                  ? 'SELECT PLAN'
-                  : num === 3
-                  ? 'ADD-ONS'
-                  : 'SUMMARY'}
+                    ? 'SELECT PLAN'
+                    : num === 3
+                      ? 'ADD-ONS'
+                      : 'SUMMARY'}
               </p>
             </div>
           </div>

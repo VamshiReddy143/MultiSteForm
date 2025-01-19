@@ -84,6 +84,12 @@ export default {
   		}
   	}
   },
-  plugins:[daisyui]
+  plugins:[daisyui],
+  safelist: [
+    'text-white',
+    'text-blue-600',
+    'bg-sky-100',
+    
+  ],
 }
 

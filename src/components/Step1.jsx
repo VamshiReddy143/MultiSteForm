@@ -34,7 +34,7 @@ function Step1({ nextStep, updateFormData }) {
 
   return (
   
-   <form className='flex flex-col gap-5 ' onSubmit={handleSubmit}>
+   <form className='flex flex-col gap-5 pb-2 ' onSubmit={handleSubmit}>
      <div>
         <h1 className='font-bold text-[2em]'>Personal info</h1>
         <p className='text-gray-500'>Please provide your name, email address, and phone number.</p>
